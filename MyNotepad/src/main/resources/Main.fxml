@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+
+<VBox fx:id="VBox" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="MainController"
+            prefHeight="400.0" prefWidth="600.0">
+
+<children>
+  <MenuBar>
+    <menus>
+    <Menu id="mFile" mnemonicParsing="false" text="文件(F)">
+      <items>
+      <MenuItem id="newFile" fx:id="newFileButton" mnemonicParsing="false" onAction="#newClick" text="新建(N) ctrl+N"/>
+      <MenuItem id="openFile" fx:id="openFile" mnemonicParsing="false" onAction="#openClick" text="打开(O) ctrl+O"/>
+      <MenuItem id="saveFile" fx:id="saveFile" mnemonicParsing="false" onAction="#saveClick" text="保存(S) ctrl+S"/>
+        <MenuItem id="exit" fx:id="exit" mnemonicParsing="false" onAction="#exitClick" text="退出(X) ctrl+X"/>
+      </items>
+      </Menu>
+    <Menu id="mEdit" mnemonicParsing="false" text="编辑(E)">
+      <items>
+        <MenuItem fx:id="cutText" id="cutText" mnemonicParsing="false" onAction="#cutClick" text="剪切(T) ctrl+X" />
+        <MenuItem id="copyText" fx:id="copyText" mnemonicParsing="false" onAction="#copyClick" text="复制(C) ctrl+C"/>
+        <MenuItem id="pasteText" fx:id="pasteText" mnemonicParsing="false" onAction="#pasteClick" text="粘贴(P) ctrl+V"/>
+      </items>
+    </Menu>
+      <Menu fx:id="mFormat" mnemonicParsing="false" text="格式(O)">
+        <items>
+          <MenuItem id="textFont" fx:id="textFont" mnemonicParsing="false" text="字体(F)">
+            <graphic>
+              <TextField fx:id="fontSize" id="fontSize" promptText="30" onKeyPressed="#setFont"/>
+            </graphic>
+          </MenuItem>
+        </items>
+      </Menu>
+      <Menu id="mhelp" text="帮助(H)">
+        <items>
+          <MenuItem id="about" fx:id="about" mnemonicParsing="false" onAction="#aboutClick" text="关于记事本(A)"/>
+        </items>
+      </Menu>
+    </menus>
+  </MenuBar>
+  <TextArea fx:id="text" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="574" prefWidth="600" VBox.vgrow="ALWAYS"/>
+</children>
+</VBox>

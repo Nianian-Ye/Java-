@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<FlowPane fx:id="pane" alignment="TOP_CENTER" columnHalignment="CENTER" maxWidth="500" maxHeight="400"
+          orientation="VERTICAL" xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="About"
+          prefHeight="400.0" prefWidth="500.0">
+  <!--
+  选用flowPane作为基础布局 设置组件对齐方式、排列方式 面板宽高
+   FlowPane对比GridPane 在这个场景中，需要的组件很少很简洁，FlowPane够用
+  -->
+  <children>
+    <ImageView fx:id="aboutImage" fitHeight="350" fitWidth="Infinity" focusTraversable="true" pickOnBounds="true"
+    preserveRatio="true">
+      <Image  url="about.png"/>
+    </ImageView>
+    <!--插入图像 设置填充尺寸 Image可作为构造方法传入ImageView中
+    focusTracersable(Node):Specifies whether this Node should be a part of focus traversal cycle. When this property is true focus can be moved to
+    this Node and from this Node using regular focus traversal keys.
+    preserveRatio: Indicates whether to preserve the aspect ratio of the source image when scaling to fit the image within the fitting bounding box.
+    pickOnBounds: 为true时，节点的边界能触发鼠标事件，否则节点内几何图形的边界触发鼠标事件。默认false
+    -->
+  </children>
+</FlowPane>
